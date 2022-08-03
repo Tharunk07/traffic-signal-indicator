@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <title>Traffic Signal</title>
+    <link rel="icon" href="https://drive.google.com/uc?export=view&id=1W43DJl9GmkzWWaQY2_6Ui_olqaMzz6OZ"type="image/x-icon">
+    <link rel="stylesheet" href="traffic.css">
+    </head>
+
+<body>
+    
+    <div class="trafficlight" id="content">
+        <div class="protector"></div>
+        <div class="protector"></div>
+        <div class="protector"></div>
+        <div class="red" id="red" hidden></div>
+        <div class="yellow" id="yellow" hidden></div>
+        <div class="green" id="green" hidden></div>
+    <script>
+        function signals(sw){
+            var a=document.getElementById("red");
+            var b=document.getElementById("yellow");
+            var c=document.getElementById("green");
+            if (sw===0){
+                c.setAttribute("hidden",false);
+                a.removeAttribute("hidden");
+                b.setAttribute("hidden",false);
+            }
+            else if(sw===1){
+                a.setAttribute("hidden",false);
+                b.removeAttribute("hidden");
+                c.setAttribute("hidden",false);
+            }
+            else{
+                b.setAttribute("hidden",false);
+                c.removeAttribute("hidden");
+                a.setAttribute("hidden",false);
+            }
+        }
+    </script>
+ </div>
+ <br>
+ <br>
+<button class="button" onclick="signals(0)">STOP</button>
+<button class="button" onclick="signals(1)">READY</button>
+<button class="button" onclick="signals(2)">GO</button>    
+</div>
+</body>
+     </html>
